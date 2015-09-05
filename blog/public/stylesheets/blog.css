@@ -1,0 +1,28 @@
+#banner {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #282;
+  text-align: center;
+}
+
+#menu {
+  margin-left: 10em;
+  margin-right: 10em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid gray;
+  text-align: center;
+}
+
+#main {
+  margin-left: 10em;
+  padding-top: 10px;
+  padding-left: 10px;
+  background: white;
+}
+
+#article .article_title {
+  font: 120% bold;
+}
+

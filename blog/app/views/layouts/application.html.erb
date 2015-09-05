@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
+  <title>Team D&T</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "blog", :media => "all" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="banner">
+    <%= @page_title || "Team D&T" %>
+  </div>
+  <div id="menu">
+    <a href="http://www....">主页</a> |
+    <a href="http://www..../articles">文章</a> |
+    作品发布 |
+    团队简介
+  </div>
+  <div id="columns">
+	<!--
+    
+    -->
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
