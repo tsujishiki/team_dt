@@ -13,6 +13,7 @@
   -->
   
   <% @articles.each do |article| %>
+  <!-- <%= content_tag_for(:tr, @articles) do |article| %> -->
     <tr class="article_title">
       <td colspan="3"><%= article.title %></td>
 	</tr>
