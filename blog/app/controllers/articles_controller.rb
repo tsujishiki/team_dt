@@ -13,6 +13,9 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     
     if @article.save
+      # send mail
+      # ArticleNotifier.received(@article).deliver
+      
       redirect_to @article
     else
       render 'new'
