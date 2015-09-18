@@ -13,7 +13,6 @@
   -->
   
   <% @articles.each do |article| %>
-  <!-- <%= content_tag_for(:tr, @articles) do |article| %> -->
     <tr class="article_title">
       <td colspan="3"><%= article.title %></td>
 	</tr>
@@ -29,4 +28,4 @@
   
 </table>
 
-<%= button_to '新建文章', new_article_path %>
+<%= button_to "新建文章", new_article_path %>
