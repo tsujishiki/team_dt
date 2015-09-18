@@ -1,0 +1,38 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+	<legend>输入用户信息</legend>
+
+    <div class="field">
+      <!-- <%= f.label :username %><br> -->
+      <%= f.text_field :username, placeholder: "用户名"%>
+    </div>
+    <div class="field">
+      <!-- <%= f.label :password %><br> -->
+      <%= f.password_field :password, placeholder: "密码" %>
+    </div>
+    <div class="field">
+      <!-- <%= f.label :password_confirmation %><br> -->
+      <%= f.password_field :password_confirmation, placeholder: "确认密码" %>
+    </div>
+    <div class="field">
+      <!-- <%= f.label :email %><br> -->
+      <%= f.text_field :email, type: :email, placeholder: "电子邮件" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "提交用户信息" %> 或 <input type="button" value="登录" />
+    </div>
+	
+  </fieldset>
+<% end %>
