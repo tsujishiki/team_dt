@@ -1,13 +1,15 @@
 <p>
-  <strong>Title:</strong>
-  <%= @article.title %>
+  <!-- <strong>Title:</strong> -->
+  <h2><%= @article.title %></h2>
 </p>
 <p>
-  <strong>Text:</strong>
-  <%= @article.text %>
+  <!-- <strong>Text:</strong> -->
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= @article.text %>
 </p>
 
-<h2>Comments</h2>
+<br>
+
+<h3>评论</h3>
 <!--
 <% @article.comments.each do |comment| %>
   <p>
@@ -22,7 +24,9 @@
 -->
 <%= render @article.comments %>
 
-<h2>Add a comment:</h2>
+<br>
+
+<h4>添加一个评论:</h4>
 <!--
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
@@ -40,4 +44,7 @@
 -->
 <%= render "comments/form" %>
 
-<%= link_to 'Back', articles_path %> | <%= link_to 'Edit', edit_article_path(@article) %>
+<%= link_to "返回", articles_path %>
+<% if session[:user_id] %>
+  | <%= link_to "编辑", edit_article_path(@article) %>
+<% end %>

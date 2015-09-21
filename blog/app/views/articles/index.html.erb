@@ -19,17 +19,27 @@
 	  </td>
 	</tr>
     <tr class="article_text">
-	  <td colspan="2"><%= article.text %></td>
+	  <td colspan="2">
+		<% if article.text.length >= 15 %>
+		  <%= article.text[0, 14] %>...
+		<% else %>
+		  <%= article.text %>
+		<% end %>
+	  </td>
 	</tr>
 	<tr>
 	  <!--<td><%= link_to "Show", article_path(article) %></td>-->
 	  <% if session[:user_id] %>
-	  <td><%= link_to "编辑", edit_article_path(article) %></td>
-	  <td><%= link_to "删除", article_path(article), method: :delete, data: { confirm: "Are you sure?" } %></td>
+	    <td><%= link_to "编辑", edit_article_path(article) %></td>
+	    <td><%= link_to "删除", article_path(article), method: :delete, data: { confirm: "是否确定删除？" } %></td>
 	  <% end %>
 	</tr>
   <% end %>
   
 </table>
 
-<%= button_to "新建文章", new_article_path %>
+<br>
+
+<% if session[:user_id] %>
+  <%= link_to "新建文章", new_article_path %>
+<% end %>

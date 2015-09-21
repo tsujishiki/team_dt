@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   protected
     def authorize
       unless User.find_by(id: session[:user_id])
-        redirect_to login_url, notice: "请登录"
+        redirect_to login_url, alert: "请登录后再执行此操作"
       end
     end
 end
