@@ -13,9 +13,14 @@
   </div>
   <div id="menu">
     <!-- <a href="http://localhost:3000/">主页</a> | -->
-    <a href="http://localhost:3000/articles">Blog</a> |
-    <a href="http://localhost:3000/login">登录</a> |
-    团队简介
+    <a href="http://localhost:3000/articles">Blog</a>
+     | 团队简介
+	<% if !session[:user_id] %>
+	   | <a href="http://localhost:3000/login">登录</a>
+	<% end %>
+	<% if session[:user_id] %>
+	   | <%= link_to "登出", "http://localhost:3000/logout", method: :delete %>
+	<% end %>
   </div>
   <div id="columns">
 	<!--
