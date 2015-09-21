@@ -1,0 +1,22 @@
+<div>
+  <% if flash[:alert] %>
+    <p id="notice"><%= flash[:alert] %></p>
+  <% end %>
+  <%= form_tag do %>
+    <fieldset>
+ 	  <legend>输入用户信息</legend>
+
+      <div class="field">
+        <!-- <%= label_tag :username, "用户名" %><br> -->
+        <%= text_field_tag :username, params[:name], placeholder: "用户名 / Email" %>
+      </div>
+      <div class="field">
+        <!-- <%= label_tag :password, "密码" %><br> -->
+        <%= password_field_tag :password, params[:password], placeholder: "密码" %>
+      </div>
+      <div class="actions">
+        <%= submit_tag "登录" %>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
